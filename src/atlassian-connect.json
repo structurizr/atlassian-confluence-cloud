@@ -1,0 +1,210 @@
+{
+  "key": "structurizr-confluence",
+  "name": "Structurizr",
+  "description": "Structurizr for Confluence",
+  "version": "1.0",
+  "vendor": {
+    "name": "Structurizr Limited",
+    "url": "https://structurizr.com"
+  },
+  "baseUrl": "https://confluence.structurizr.com/",
+  "authentication": {
+    "type": "none"
+  },"scopes": [
+    "read"
+  ],
+  "modules": {
+    "dynamicContentMacros": [
+      {
+        "key": "structurizr-confluence-public",
+        "name": {
+          "i18n": "structurizr-confluence-public.macro.name",
+          "value": "Structurizr Public Embed"
+        },
+        "description": {
+          "i18n": "structurizr-confluence-public.macro.desc",
+          "value": "Embeds a diagram from a public Structurizr workspace."
+        },
+        "width": "100%",
+        "height": "100px",
+        "url": "/public.jsp?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "icon": {
+          "height": 80,
+          "url": "/favicon.png",
+          "width": 80
+        },
+        "bodyType": "none",
+        "documentation": {
+          "url": "https://structurizr.com/help/atlassian-confluence"
+        },
+        "categories": [ "external-content", "visuals" ],
+        "parameters": [
+          {
+            "identifier": "workspaceId",
+            "name": {
+              "value": "Workspace ID"
+            },
+            "description": {
+              "value": "The ID of the workspace."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          },
+          {
+            "identifier": "diagram",
+            "name": {
+              "value": "Diagram key"
+            },
+            "description": {
+              "value": "The key of the diagram to embed."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          },
+          {
+            "identifier": "diagramSelector",
+            "name": {
+              "value": "Diagram selector"
+            },
+            "description": {
+              "value": "Include the diagram selector."
+            },
+            "type": "boolean",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "false",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "key": "structurizr-confluence-private",
+        "name": {
+          "i18n": "structurizr-confluence-private.macro.name",
+          "value": "Structurizr Private Embed"
+        },
+        "description": {
+          "i18n": "structurizr-confluence-private.macro.desc",
+          "value": "Embeds a diagram from a private Structurizr workspace."
+        },
+        "width": "100%",
+        "height": "100px",
+        "url": "/private.jsp?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "icon": {
+          "height": 80,
+          "url": "/favicon.png",
+          "width": 80
+        },
+        "bodyType": "none",
+        "documentation": {
+          "url": "https://structurizr.com/help/atlassian-confluence"
+        },
+        "categories": [ "external-content", "visuals" ],
+        "parameters": [
+          {
+            "identifier": "workspaceId",
+            "name": {
+              "value": "Workspace ID"
+            },
+            "description": {
+              "value": "The ID of the workspace."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          },
+          {
+            "identifier": "apiKey",
+            "name": {
+              "value": "API key"
+            },
+            "description": {
+              "value": "The workspace API key."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          },
+          {
+            "identifier": "diagram",
+            "name": {
+              "value": "Diagram key"
+            },
+            "description": {
+              "value": "The key of the diagram to embed."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          },
+          {
+            "identifier": "diagramSelector",
+            "name": {
+              "value": "Diagram selector"
+            },
+            "description": {
+              "value": "Include the diagram selector."
+            },
+            "type": "boolean",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "false",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "key": "structurizr-confluence-express",
+        "name": {
+          "i18n": "structurizr-confluence-express.macro.name",
+          "value": "Structurizr Express Embed"
+        },
+        "description": {
+          "i18n": "structurizr-confluence-express.macro.desc",
+          "value": "Embeds the Structurizr Express diagram defined in the macro body."
+        },
+        "width": "100%",
+        "height": "100px",
+        "url": "/express.jsp?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "icon": {
+          "height": 80,
+          "url": "/favicon.png",
+          "width": 80
+        },
+        "bodyType": "plain-text",
+        "documentation": {
+          "url": "https://structurizr.com/help/atlassian-confluence"
+        },
+        "categories": [ "external-content", "visuals" ],
+        "parameters": [
+          {
+            "identifier": "expressKey",
+            "name": {
+              "value": "Express key"
+            },
+            "description": {
+              "value": "The Structurizr Express key."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          }
+        ]
+      }
+    ]
+  }
+}
