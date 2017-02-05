@@ -25,14 +25,12 @@ function getMacroParameter(macro, name, defaultValue) {
     }
 }
 
-function receiveStructurizrResponsiveEmbedMessage(event)
-{
-    if (event.origin.indexOf('structurizr.com') > -1) {
-        var elementId = event.data.split('=')[0];
-        var height = event.data.split('=')[1];
-        document.getElementById(elementId).height = height + "px";
-        AP.resize("100%", height + "px");
-    }
-}
+StructurizrEmbed.resizeEmbeddedDiagram = function (elementId) {
+    var structurizrEmbed = document.getElementById(elementId);
+    var width = structurizrEmbed.offsetWidth;
+    var aspectRatio = StructurizrEmbed.aspectRatios[elementId];
 
-window.addEventListener("message", receiveStructurizrResponsiveEmbedMessage, false);
+    var height = (width / aspectRatio);
+    structurizrEmbed.height = height + "px";
+    AP.resize("100%", height + "px");
+};
