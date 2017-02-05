@@ -29,8 +29,9 @@ StructurizrEmbed.resizeEmbeddedDiagram = function (elementId) {
     var structurizrEmbed = document.getElementById(elementId);
     var width = structurizrEmbed.offsetWidth;
     var aspectRatio = StructurizrEmbed.aspectRatios[elementId];
+    var addition = StructurizrEmbed.additions[elementId];
 
-    var height = (width / aspectRatio);
+    var height = (width / aspectRatio) + addition;
     structurizrEmbed.height = height + "px";
     AP.resize("100%", height + "px");
 };
