@@ -40,6 +40,20 @@
         "categories": [ "external-content", "visuals" ],
         "parameters": [
           {
+            "identifier": "structurizrUrl",
+            "name": {
+              "value": "Structurizr URL"
+            },
+            "description": {
+              "value": "The URL of the Structurizr installation."
+            },
+            "type": "string",
+            "required": false,
+            "multiple": false,
+            "defaultValue": "https://structurizr.com",
+            "hidden": false
+          },
+          {
             "identifier": "workspaceId",
             "name": {
               "value": "Workspace ID"
