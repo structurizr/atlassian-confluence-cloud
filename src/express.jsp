@@ -9,21 +9,16 @@
 
     <script>
         function embedDiagram(macro) {
-            var expressKey = getMacroParameter(macro, 'expressKey', '');
             var definition = macro.body;
-
-            var form = document.getElementById('myEmbeddedDiagramForm');
-
-            document.getElementById('key').value = expressKey;
             document.getElementById('definition').innerHTML = definition;
 
+            var form = document.getElementById('myEmbeddedDiagramForm');
             form.submit();
         }
     </script>
 </head>
 <body>
 <form id="myEmbeddedDiagramForm" target="myEmbeddedDiagram" method="post" action="https://structurizr.com/embed/express" style="display: none;">
-    <input id="key" name="key" value=""/>
     <textarea id="definition" name="definition"></textarea>
     <input name="iframe" value="myEmbeddedDiagram" />
     <input name="fullscreen" value="false" />

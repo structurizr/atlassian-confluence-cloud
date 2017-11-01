@@ -202,22 +202,7 @@
           "url": "https://structurizr.com/help/atlassian-confluence"
         },
         "categories": [ "external-content", "visuals" ],
-        "parameters": [
-          {
-            "identifier": "expressKey",
-            "name": {
-              "value": "Express key"
-            },
-            "description": {
-              "value": "The Structurizr Express key."
-            },
-            "type": "string",
-            "required": true,
-            "multiple": false,
-            "defaultValue": "",
-            "hidden": false
-          }
-        ]
+        "parameters": []
       }
     ]
   }
