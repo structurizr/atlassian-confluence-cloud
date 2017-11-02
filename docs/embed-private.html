@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="structurizr-confluence.css" media="all" />
+
+    <script type="text/javascript" src="https://structurizr.com/static/js/structurizr-responsive-embed.js"></script>
+    <script src="structurizr-confluence.js"></script>
     <script id="connect-loader" data-options="sizeToParent:true;">
         (function() {
           var getUrlParam = function (param) {
@@ -20,10 +23,9 @@
           }
         
           document.getElementsByTagName("head")[0].appendChild(script);
+          script.onload = main;
         })();
     </script>
-    <script type="text/javascript" src="https://structurizr.com/static/js/structurizr-responsive-embed.js"></script>
-    <script src="structurizr-confluence.js"></script>
 
     <script>
         function embedDiagram(macro) {
