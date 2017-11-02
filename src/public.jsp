@@ -9,12 +9,11 @@
 
     <script>
         function embedDiagram(macro) {
-            var structurizrUrl = getMacroParameter(macro, 'structurizrUrl', "https://structurizr.com");
             var workspaceId = getMacroParameter(macro, 'workspaceId', 1);
             var diagram = getMacroParameter(macro, 'diagram', '1');
             var diagramSelector = getMacroParameter(macro, 'diagramSelector', 'false');
 
-            document.getElementById("structurizrEmbed").innerHTML = '<iframe id="myEmbeddedDiagram" src="' + structurizrUrl + '/embed/' + workspaceId + '?diagram=' + diagram + '&diagramSelector=' + diagramSelector + '&iframe=myEmbeddedDiagram&fullscreen=false" width="100%" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
+            document.getElementById("structurizrEmbed").innerHTML = '<iframe id="myEmbeddedDiagram" src="https://structurizr.com/embed/' + workspaceId + '?diagram=' + diagram + '&diagramSelector=' + diagramSelector + '&iframe=myEmbeddedDiagram&fullscreen=false" width="100%" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
         }
     </script>
 </head>
