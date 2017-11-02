@@ -2,12 +2,12 @@
   "key": "structurizr-confluence",
   "name": "Structurizr",
   "description": "Structurizr for Confluence",
-  "version": "1.0",
+  "version": "1.1",
   "vendor": {
     "name": "Structurizr Limited",
     "url": "https://structurizr.com"
   },
-  "baseUrl": "https://structurizr.github.io/atlassian-confluence-cloud/",
+  "baseUrl": "https://structurizr.github.io/atlassian-confluence-cloud",
   "authentication": {
     "type": "none"
   },"scopes": [
