@@ -1,9 +1,27 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="structurizr-confluence.css" media="all" />
-    <script src="${param.xdm_e}${param.cp}/atlassian-connect/all.js"></script>
+    <script id="connect-loader" data-options="sizeToParent:true;">
+        (function() {
+          var getUrlParam = function (param) {
+            var codedParam = (new RegExp(param + '=([^&]*)')).exec(window.location.search)[1];
+            return decodeURIComponent(codedParam);
+          };
+        
+          var baseUrl = getUrlParam('xdm_e') + getUrlParam('cp');
+          var options = document.getElementById('connect-loader').getAttribute('data-options');
+        
+          var script = document.createElement("script");
+          script.src = baseUrl + '/atlassian-connect/all.js';
+        
+          if(options) {
+            script.setAttribute('data-options', options);
+          }
+        
+          document.getElementsByTagName("head")[0].appendChild(script);
+        })();
+    </script>
     <script type="text/javascript" src="https://structurizr.com/static/js/structurizr-responsive-embed.js"></script>
     <script src="structurizr-confluence.js"></script>
 
