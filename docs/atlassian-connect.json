@@ -30,7 +30,7 @@
         "url": "/embed-public.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
-          "url": "/favicon.png",
+          "url": "/atlassian-confluence-cloud/favicon.png",
           "width": 80
         },
         "bodyType": "none",
@@ -98,7 +98,7 @@
         "url": "/embed-private.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
-          "url": "/favicon.png",
+          "url": "/atlassian-confluence-cloud/favicon.png",
           "width": 80
         },
         "bodyType": "none",
@@ -180,7 +180,7 @@
         "url": "/embed-express.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
-          "url": "/favicon.png",
+          "url": "/atlassian-confluence-cloud/favicon.png",
           "width": 80
         },
         "bodyType": "plain-text",
