@@ -7,7 +7,7 @@
     "name": "Structurizr Limited",
     "url": "https://structurizr.com"
   },
-  "baseUrl": "https://confluence.structurizr.com/",
+  "baseUrl": "https://structurizr.github.io/atlassian-confluence-cloud/",
   "authentication": {
     "type": "none"
   },"scopes": [
@@ -27,7 +27,7 @@
         },
         "width": "100%",
         "height": "100px",
-        "url": "/public.jsp?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "url": "/embed-public.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
           "url": "/favicon.png",
@@ -95,7 +95,7 @@
         },
         "width": "100%",
         "height": "100px",
-        "url": "/private.jsp?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "url": "/embed-private.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
           "url": "/favicon.png",
@@ -177,7 +177,7 @@
         },
         "width": "100%",
         "height": "100px",
-        "url": "/express.jsp?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "url": "/embed-express.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
           "url": "/favicon.png",
