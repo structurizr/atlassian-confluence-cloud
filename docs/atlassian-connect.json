@@ -1,8 +1,8 @@
 {
-  "key": "structurizr-confluence",
+  "key": "structurizr",
   "name": "Structurizr",
-  "description": "Structurizr for Confluence",
-  "version": "1.1",
+  "description": "Structurizr for Atlassian Confluence Cloud",
+  "version": "2.0",
   "vendor": {
     "name": "Structurizr Limited",
     "url": "https://structurizr.com"
@@ -16,86 +16,18 @@
   "modules": {
     "dynamicContentMacros": [
       {
-        "key": "structurizr-confluence-public",
+        "key": "structurizr-workspace",
         "name": {
-          "i18n": "structurizr-confluence-public.macro.name",
-          "value": "Structurizr Public Embed"
+          "i18n": "structurizr-workspace.macro.name",
+          "value": "Structurizr workspace embed"
         },
         "description": {
-          "i18n": "structurizr-confluence-public.macro.desc",
-          "value": "Embeds a diagram from a public Structurizr workspace."
+          "i18n": "structurizr-workspace.macro.desc",
+          "value": "Embeds a diagram from a Structurizr workspace."
         },
         "width": "100%",
         "height": "100px",
-        "url": "/embed-public.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
-        "icon": {
-          "height": 80,
-          "url": "/atlassian-confluence-cloud/favicon.png",
-          "width": 80
-        },
-        "bodyType": "none",
-        "documentation": {
-          "url": "https://structurizr.com/help/atlassian-confluence"
-        },
-        "categories": [ "external-content", "visuals" ],
-        "parameters": [
-          {
-            "identifier": "workspaceId",
-            "name": {
-              "value": "Workspace ID"
-            },
-            "description": {
-              "value": "The ID of the workspace."
-            },
-            "type": "string",
-            "required": true,
-            "multiple": false,
-            "defaultValue": "",
-            "hidden": false
-          },
-          {
-            "identifier": "diagram",
-            "name": {
-              "value": "Diagram key"
-            },
-            "description": {
-              "value": "The key of the diagram to embed."
-            },
-            "type": "string",
-            "required": true,
-            "multiple": false,
-            "defaultValue": "",
-            "hidden": false
-          },
-          {
-            "identifier": "diagramSelector",
-            "name": {
-              "value": "Diagram selector"
-            },
-            "description": {
-              "value": "Include the diagram selector."
-            },
-            "type": "boolean",
-            "required": true,
-            "multiple": false,
-            "defaultValue": "false",
-            "hidden": false
-          }
-        ]
-      },
-      {
-        "key": "structurizr-confluence-private",
-        "name": {
-          "i18n": "structurizr-confluence-private.macro.name",
-          "value": "Structurizr Private Embed"
-        },
-        "description": {
-          "i18n": "structurizr-confluence-private.macro.desc",
-          "value": "Embeds a diagram from a private Structurizr workspace."
-        },
-        "width": "100%",
-        "height": "100px",
-        "url": "/embed-private.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
+        "url": "/embed-workspace.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
           "url": "/atlassian-confluence-cloud/favicon.png",
@@ -127,10 +59,10 @@
               "value": "API key"
             },
             "description": {
-              "value": "The workspace API key."
+              "value": "The workspace API key (required for private workspaces)."
             },
             "type": "string",
-            "required": true,
+            "required": false,
             "multiple": false,
             "defaultValue": "",
             "hidden": false
@@ -166,13 +98,13 @@
         ]
       },
       {
-        "key": "structurizr-confluence-express",
+        "key": "structurizr-express",
         "name": {
-          "i18n": "structurizr-confluence-express.macro.name",
-          "value": "Structurizr Express Embed"
+          "i18n": "structurizr-express.macro.name",
+          "value": "Structurizr Express embed"
         },
         "description": {
-          "i18n": "structurizr-confluence-express.macro.desc",
+          "i18n": "structurizr-express.macro.desc",
           "value": "Embeds the Structurizr Express diagram defined in the macro body."
         },
         "width": "100%",

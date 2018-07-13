@@ -17,9 +17,9 @@ StructurizrEmbed.resizeEmbeddedDiagram = function (elementId) {
     var aspectRatio = StructurizrEmbed.aspectRatios[elementId];
     var addition = StructurizrEmbed.additions[elementId];
 
-    var height = (width / aspectRatio) + addition;
+    var height = Math.floor((width / aspectRatio)) + addition;
     structurizrEmbed.height = height + "px";
-    AP.resize("100%", height + "px");
+    AP.resize("100%", (height + 4) + "px"); // the 4 pixels extra stops a scrollbar from showing :-/
 };
 
 function main() {
