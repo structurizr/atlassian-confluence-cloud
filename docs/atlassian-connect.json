@@ -3,7 +3,7 @@
   "name": "Structurizr",
   "description": "Structurizr for Atlassian Confluence Cloud",
   "apiVersion": 2,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "vendor": {
     "name": "Structurizr Limited",
     "url": "https://structurizr.com"
@@ -40,6 +40,20 @@
         },
         "categories": [ "external-content", "visuals" ],
         "parameters": [
+          {
+            "identifier": "structurizrUrl",
+            "name": {
+              "value": "Structurizr URL"
+            },
+            "description": {
+              "value": "The URL of the Structurizr installation."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "https://structurizr.com",
+            "hidden": false
+          },
           {
             "identifier": "workspaceId",
             "name": {
@@ -121,7 +135,22 @@
           "url": "https://structurizr.com/help/atlassian-confluence"
         },
         "categories": [ "external-content", "visuals" ],
-        "parameters": []
+        "parameters": [
+          {
+            "identifier": "structurizrUrl",
+            "name": {
+              "value": "Structurizr URL"
+            },
+            "description": {
+              "value": "The URL of the Structurizr installation."
+            },
+            "type": "string",
+            "required": true,
+            "multiple": false,
+            "defaultValue": "https://structurizr.com",
+            "hidden": false
+          }
+        ]
       }
     ]
   }

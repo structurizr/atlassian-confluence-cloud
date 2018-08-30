@@ -29,6 +29,7 @@
 
     <script>
         function embedDiagram(macro) {
+            var structurizrUrl = getMacroParameter(macro, 'structurizrUrl', 'https://structurizr.com');
             var workspaceId = getMacroParameter(macro, 'workspaceId', 1);
             var apiKey = getMacroParameter(macro, 'apiKey', '');
             var diagram = getMacroParameter(macro, 'diagram', '1');
@@ -36,7 +37,7 @@
             var width = getMacroParameter(macro, 'width', '100%');
 
             var form = document.getElementById('structurizrEmbedForm');
-            form.action = 'https://structurizr.com/embed/' + workspaceId;
+            form.action = structurizrUrl + '/embed/' + workspaceId;
 
             document.getElementById('apiKey').value = apiKey;
             document.getElementById('diagram').value = diagram;

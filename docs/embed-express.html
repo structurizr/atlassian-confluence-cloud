@@ -29,21 +29,24 @@
 
     <script>
         function embedDiagram(macro) {
+            var structurizrUrl = getMacroParameter(macro, 'structurizrUrl', 'https://structurizr.com');
+
             var definition = macro.body;
             document.getElementById('definition').innerHTML = definition;
 
-            var form = document.getElementById('myEmbeddedDiagramForm');
+            var form = document.getElementById('structurizrEmbedForm');
+            form.action = structurizrUrl + '/embed/express';
             form.submit();
         }
     </script>
 </head>
 <body>
-<form id="myEmbeddedDiagramForm" target="myEmbeddedDiagram" method="post" action="https://structurizr.com/embed/express" style="display: none;">
+<form id="structurizrEmbedForm" target="structurizrDiagram" method="post" action="https://structurizr.com/embed/express" style="display: none;">
     <textarea id="definition" name="definition"></textarea>
-    <input name="iframe" value="myEmbeddedDiagram" />
+    <input name="iframe" value="structurizrDiagram" />
     <input name="fullscreen" value="false" />
 </form>
 
-<iframe id="myEmbeddedDiagram" name="myEmbeddedDiagram" width="100%" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+<iframe id="structurizrDiagram" name="structurizrDiagram" width="100%" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
 </body>
 </html>
