@@ -8,7 +8,7 @@
     "name": "Structurizr Limited",
     "url": "https://structurizr.com"
   },
-  "baseUrl": "https://structurizr.github.io/atlassian-confluence-cloud",
+  "baseUrl": "https://structurizr.com/static/atlassian-confluence-cloud",
   "authentication": {
     "type": "none"
   },"scopes": [
@@ -31,7 +31,7 @@
         "url": "/embed-workspace.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
-          "url": "/atlassian-confluence-cloud/favicon.png",
+          "url": "/static/img/favicon.png",
           "width": 80
         },
         "bodyType": "none",
@@ -127,7 +127,7 @@
         "url": "/embed-express.html?pageId={page.id}&pageVersion={page.version}&macroId={macro.id}",
         "icon": {
           "height": 80,
-          "url": "/atlassian-confluence-cloud/favicon.png",
+          "url": "/static/img/favicon.png",
           "width": 80
         },
         "bodyType": "plain-text",
