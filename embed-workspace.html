@@ -31,6 +31,7 @@
             var workspaceId = getMacroParameter(macro, 'workspaceId', 1);
             var apiKey = getMacroParameter(macro, 'apiKey', '');
             var diagram = getMacroParameter(macro, 'diagram', '1');
+            var perspective = getMacroParameter(macro, 'perspective', '');
             var diagramSelector = getMacroParameter(macro, 'diagramSelector', 'false');
             var width = getMacroParameter(macro, 'width', '100%');
 
@@ -39,6 +40,7 @@
 
             document.getElementById('apiKey').value = apiKey;
             document.getElementById('diagram').value = diagram;
+            document.getElementById('perspective').value = perspective;
             document.getElementById('diagramSelector').value = diagramSelector;
 
             form.submit();
@@ -49,6 +51,7 @@
 <form id="structurizrEmbedForm" target="structurizrDiagram" method="post" action="" style="display: none;">
     <input id="apiKey" name="apiKey" value=""/>
     <input id="diagram" name="diagram" value="" />
+    <input id="perspective" name="perspective" value="" />
     <input id="diagramSelector" name="diagramSelector" value="" />
     <input name="iframe" value="structurizrDiagram" />
     <input name="fullscreen" value="false" />

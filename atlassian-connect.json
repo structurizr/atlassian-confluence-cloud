@@ -3,7 +3,7 @@
   "name": "Structurizr",
   "description": "Structurizr for Atlassian Confluence Cloud",
   "apiVersion": 2,
-  "version": "2.2.0",
+  "version": "2.3.0",
   "vendor": {
     "name": "Structurizr Limited",
     "url": "https://structurizr.com"
@@ -92,6 +92,20 @@
             },
             "type": "string",
             "required": true,
+            "multiple": false,
+            "defaultValue": "",
+            "hidden": false
+          },
+          {
+            "identifier": "perspective",
+            "name": {
+              "value": "Perspective"
+            },
+            "description": {
+              "value": "The name of the perspective to show (optional)."
+            },
+            "type": "string",
+            "required": false,
             "multiple": false,
             "defaultValue": "",
             "hidden": false
