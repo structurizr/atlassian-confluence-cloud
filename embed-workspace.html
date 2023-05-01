@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="structurizr-confluence.css" media="all" />
+    <style>
+        body {
+            background: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 
-    <script type="text/javascript" src="https://static.structurizr.com/js/structurizr-responsive-embed.js"></script>
-    <script src="structurizr-confluence.js"></script>
+    <script type="text/javascript" src="https://static.structurizr.com/js/structurizr-embed.js"></script>
+    <script>
+        function getUrlParameter(param) {
+            var codedParam = (new RegExp(param + '=([^&]*)')).exec(window.location.search)[1];
+            return decodeURIComponent(codedParam);
+        }
+
+        function getMacroParameter(macro, name, defaultValue) {
+            if (macro.parameters[name] && macro.parameters[name].value) {
+                return macro.parameters[name].value;
+            } else {
+                return defaultValue;
+            }
+        }
+
+        function main() {
+            AP.require("request", function(request) {
+                var pageId = getUrlParameter("pageId");
+                var pageVersion = getUrlParameter("pageVersion");
+                var macroId = getUrlParameter("macroId");
+                request({
+                    url: "/rest/api/content/" + pageId +
+                        "/history/" + pageVersion +
+                        "/macro/id/" + macroId,
+                    success: function(response) {
+                        embedDiagram(JSON.parse(response));
+                    }
+                });
+            });
+        }
+    </script>
+
     <script id="connect-loader" data-options="sizeToParent:true;">
         (function() {
           var getUrlParam = function (param) {
@@ -33,29 +69,54 @@
             var diagram = getMacroParameter(macro, 'diagram', '1');
             var perspective = getMacroParameter(macro, 'perspective', '');
             var diagramSelector = getMacroParameter(macro, 'diagramSelector', 'false');
-            var width = getMacroParameter(macro, 'width', '100%');
 
-            var form = document.getElementById('structurizrEmbedForm');
-            form.action = structurizrUrl + '/embed/' + workspaceId;
+            var url = structurizrUrl + '/embed/' + workspaceId +
+                '?iframe=structurizrDiagram' +
+                '&diagramSelector=' + diagramSelector +
+                '&diagram=' + diagram +
+                '&apiKey=' + apiKey +
+                '&perspective=' + perspective;
 
-            document.getElementById('apiKey').value = apiKey;
-            document.getElementById('diagram').value = diagram;
-            document.getElementById('perspective').value = perspective;
-            document.getElementById('diagramSelector').value = diagramSelector;
+            document.getElementById('structurizrDiagram').setAttribute('src', url);
+            const parentNodeWidth = document.getElementById('structurizrDiagram').parentNode.offsetWidth;
+            AP.resize(parentNodeWidth + "px", "100px");
+            document.getElementById('loadingMessage').style.display = "none";
 
-            form.submit();
+            structurizr.embed.onResize(function(embed) {
+                var iframe = document.getElementById('structurizrDiagram');
+                var aspectRatio = embed.aspectRatio;
+                var addition = embed.addition;
+                var height = Math.ceil((width / aspectRatio) + addition);
+
+                // enforce some minimum dimensions
+                width =  Math.max(width, 200);
+                height =  Math.max(height, 200);
+
+                iframe.width = width + "px";
+                iframe.height = height + "px";
+                AP.resize("100%", (height+4) + "px");
+            });
         }
+
+        var width = window.innerWidth;
+
+        function resizeEmbeddedDiagrams() {
+            const iframe = document.getElementById('structurizrDiagram');
+            if (iframe) {
+                const parentNode = iframe.parentNode;
+                if (parentNode) {
+                    width = parentNode.offsetWidth;
+                }
+            }
+        }
+
+        window.addEventListener("resize", resizeEmbeddedDiagrams, false);
     </script>
 </head>
 <body>
-<form id="structurizrEmbedForm" target="structurizrDiagram" method="post" action="" style="display: none;">
-    <input id="apiKey" name="apiKey" value=""/>
-    <input id="diagram" name="diagram" value="" />
-    <input id="perspective" name="perspective" value="" />
-    <input id="diagramSelector" name="diagramSelector" value="" />
-    <input name="iframe" value="structurizrDiagram" />
-    <input name="fullscreen" value="false" />
-</form>
+<p id="loadingMessage">
+  Loading...
+</p>
 
 <iframe id="structurizrDiagram" name="structurizrDiagram" width="100%" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
 </body>
